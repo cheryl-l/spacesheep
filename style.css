@@ -1,4 +1,14 @@
 /*:root {*/
+:root::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+:root {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 .theme-dark {
     --dc: #0e0d1d;
     --tdc: white;
