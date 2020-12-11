@@ -1,28 +1,71 @@
-:root {
-/*.theme-dark {*/
+/*:root {*/
+.theme-dark {
     --dc: #0e0d1d;
     --tdc: white;
     --sc: #6e4897;
     /*--sc: #7a6cbb;*/
     /*--sc:#af74b2;*/
-    --tsc: white; 
+    --tsc: white;
     /*--ac1: #7a6cbb*/
     --ac1: #696cc1;  /*higher contrast, use as hover */
     --tac1: black;
+
+    --iac1: #96933e;
+    /*--iac1: #96933e;*/
+    --itac1: white;
+
     --ac2: #212257; /*lower contrast, use as borders */
-    --filter-value: 0%;
+    --switch-image: url("assets/modew.png");
+    --logo-image: url(assets/logow.png);
+
 }
 
-/*.theme-light {*/
-/*    --dc: white;*/
-/*    --tdc: black;*/
-/*    --sc: #9F74CF;*/
-/*    --tsc: black;*/
-/*    --ac1: #394163;*/
-/*    --tac1: white;*/
-/*    --ac2: #F3E0EC;*/
-/*    --filter-value: 100%;*/
-/*}*/
+.theme-light {
+    --dc: white;
+    --tdc: black;
+    --sc: #9F74CF;
+    --tsc: black;
+    --ac1: #394163;
+    --tac1: white;
+    --iac1: #c6be9c;
+    --itac1: black;
+    --ac2: #F3E0EC;
+    --switch-image: url("assets/modeb.png");
+    --logo-image: url(assets/logob.png);
+
+}
+
+
+#switch {
+    background-color: transparent;
+    background-image: var(--switch-image);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    outline: none;
+    float:right;
+    width:5vh;
+    height:5vh;
+    margin:1.5vh 10px 1.5vh 10px;
+    filter: opacity(50%);
+}
+
+
+#switch:hover {
+    filter:opacity(100%);
+}
+
+
+#logo {
+    background-image: var(--logo-image);
+}
+
+#logo-name:hover { /* complex workaround */
+    background-color: var(--iac1);
+    color: var(--itac1);
+    filter: invert(1);
+}
+
 
 html, body {
   margin: 0;
@@ -67,7 +110,7 @@ a:hover, a:active {
   width:100%;
   height: 8vh;
   z-index: 998;
-  
+
 }
 
 /* Style the links inside the navigation bar */
@@ -91,7 +134,7 @@ a:hover, a:active {
   background-color: var(--ac1);
   text-decoration: underline;
   /*font-weight: bold;*/
-  /*color: black;*/
+  color: var(--tac1);
 }
 
 .navigation-bar-right {
@@ -106,7 +149,7 @@ a:hover, a:active {
     outline: none;
     float:left;
     width:auto;
-    height:5vh; 
+    height:5vh;
     margin-top:1.5vh;
     margin-right: 10px;
      /*style="float:left; width:auto; height:5vh; margin-top:1.5vh; margin: 0 10px"*/
@@ -171,7 +214,7 @@ a:hover, a:active {
     min-height: 100px;
     align-items: flex-start;
     align-content: flex-start;
-    width: 100%; 
+    width: 100%;
 }
 
 .tile img {
@@ -216,10 +259,10 @@ a:hover, a:active {
     font-size: 2vw;
 }
 
-@media only screen and (max-width: 800px) { 
+@media only screen and (max-width: 800px) {
     .tile { width: 45%;}
     .article-list { padding: 8vw;}
-    
+
 
 }
 
@@ -317,7 +360,7 @@ a:hover, a:active {
   background-color: var(--ac1);
   text-decoration: underline;
   /*font-weight: bold;*/
-  /*color: black;*/
+  color: var(--tac1);
 }
 
 .footer-right {
@@ -327,11 +370,11 @@ a:hover, a:active {
 
 /*MODAL FORMATTING*/
 .modal-dialog{
-   z-index: 999; 
+   z-index: 999;
 }
 
 .modal-content{
-    color:black;
+    color: black;
     font-size:1em;
 }
 
@@ -348,7 +391,7 @@ a:hover, a:active {
 }
 
 .modal-header button{
-   width: max(50px); 
+   width: max(50px);
 }
 
 
@@ -358,7 +401,7 @@ a:hover, a:active {
     margin: auto;
     width: 800px;
     max-width: calc(100% - 4em) ;
-    
+
 }
 
 .article h1 {
@@ -367,14 +410,14 @@ a:hover, a:active {
 }
 
 .article h2 {
-    font-size: 1.7em; 
+    font-size: 1.7em;
     margin-top: 1.2em;
     color: var(--tdc);
     text-decoration: underline;
 }
 
 .article p, li {
-    font-size: 1.5em; 
+    font-size: 1.5em;
     line-height: 1.5em;
     margin-bottom: 0.6em;
     color: var(--tdc);

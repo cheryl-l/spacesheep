@@ -12,13 +12,42 @@
 </head>
 
 <div class = "navigation-bar">
-   <a href="../#" ><img src = "../assets/logow.png" alt=""> spacesheep </a>
-  <div class = "navigation-bar-right">
+   <a href="../#"  id = "logo-name"> <img src = "../assets/empty.png" id ="logo" alt="">  spacesheep </a>
+   <div class = "navigation-bar-right">
   <a href="../#cubesat">CubeSat</a>
   <a href="../#space-technology">Space Technology</a>
   <a href="../about.html">About</a>
+  <button id = "switch" onclick="toggleTheme()">  </button>
   </div>
 </div>
+
+
+<script>
+    // function to set a given theme/color-scheme
+    function setTheme(themeName) {
+        localStorage.setItem('theme', themeName);
+        document.documentElement.className = themeName;
+    }
+    // function to toggle between light and dark theme
+    function toggleTheme() {
+       if (localStorage.getItem('theme') === 'theme-dark'){
+           setTheme('theme-light');
+
+       } else {
+           setTheme('theme-dark');
+       }
+    }
+    // Immediately invoked function to set the theme on initial load
+    (function () {
+       if (localStorage.getItem('theme') === 'theme-light') {
+           setTheme('theme-light');
+       } else {
+           setTheme('theme-dark');
+       }
+    })();
+
+</script>
+
 
 
 <div class = article>
@@ -27,12 +56,12 @@
     <h2>Crewed vs Uncrewed Spacecraft</h2>
     <p> Crewed spacecraft (spaceships) are large satellites able to put humans into (and beyond) an orbit, and return them to Earth. As of 2016, only three nations have flown crewed spacecraft: USSR/Russia, USA, and China. </p>
     <p> Uncrewed spacecraft or unmanned spacecraft is a spacecraft without people on board, used for robotic spaceflight. Uncrewed spacecraft may have varying levels of autonomy from human input; they may be remote controlled, remote guided or even autonomous, meaning they have a pre-programmed list of operations, which they will execute unless otherwise instructed. Unmanned space probes can go where astronauts cannot. These include missions that get close enough to the sun to where heat and radiation levels would kill a human. And a long-term unmanned voyage could go farther than a craft that had to carry food to sustain life. </p>
-    
+
     <h2>Notable Spacecraft examples</h2>
     <p>  The Vostok was a type of spacecraft built by the Soviet Union. The first human spaceflight was accomplished with Vostok 1 on April 12, 1961, by Soviet cosmonaut Yuri Gagarin. </p>
     <p> The Parker Solar Probe is a NASA Space Probe launched in 2018 with the mission of making observations of the outer corona of the Sun. It will approach to within 9.86 solar radii (6.9 million km) from the center of the Sun, and by 2025 will travel, at closest approach, as fast as 690,000 km/h, or 0.064% the speed of light. </p>
     <p> It was the Apollo spacecraft that enabled America to win the Space Race. In December 1968 Apollo 8 was the first crewed spacecraft to orbit the Moon. On 21 July 1969 Neil Armstrong, the Commander of Apollo 11, and Buzz Aldrin became the first humans to walk on the Moon. </p>
-    
+
 </div>
 
 
@@ -40,7 +69,7 @@
 
 <div class = "article-list">
     <h2> More about <a href="../#space-technology">Space Technology</a> </h2>
-    
+
 <div class = "tiles">
      <div class = "tile">
         <a href="what-are-artificial-satellites.html">
@@ -60,14 +89,14 @@
         <h3> Space stations </h3>
         </a>
     </div>
-    
+
     <!--<div class = "tile">-->
     <!--    <a href="spacecrafts.html">-->
     <!--         <img src = "../assets/thumbnails/007.jpg" alt="image of take off">-->
     <!--    <h3> Spacecrafts </h3>-->
     <!--    </a>-->
     <!--</div>-->
-    
+
 </div>
 </div>
 
@@ -75,9 +104,8 @@
 
 <div class = "footer">
     <a href="https://www.dsta.gov.sg/spacecube"><img src = "../assets/spacecube.png" alt="" style="float:left;width:auto;height:7.5vh; margin-top:0.25vh; margin-right: 10px"> SpaceCube Mission </a>
-    <div class = "footer-right"> 
+    <div class = "footer-right">
         <a href="#">Back to Top</a>
     </div>
-    
-</div>
 
+</div>

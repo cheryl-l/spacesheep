@@ -12,13 +12,41 @@
 </head>
 
 <div class = "navigation-bar">
-   <a href="../#" ><img src = "../assets/logow.png" alt=""> spacesheep </a>
-  <div class = "navigation-bar-right">
+   <a href="../#"  id = "logo-name"> <img src = "../assets/empty.png" id ="logo" alt="">  spacesheep </a>
+   <div class = "navigation-bar-right">
   <a href="../#cubesat">CubeSat</a>
   <a href="../#space-technology">Space Technology</a>
   <a href="../about.html">About</a>
+  <button id = "switch" onclick="toggleTheme()">  </button>
   </div>
 </div>
+
+
+<script>
+    // function to set a given theme/color-scheme
+    function setTheme(themeName) {
+        localStorage.setItem('theme', themeName);
+        document.documentElement.className = themeName;
+    }
+    // function to toggle between light and dark theme
+    function toggleTheme() {
+       if (localStorage.getItem('theme') === 'theme-dark'){
+           setTheme('theme-light');
+
+       } else {
+           setTheme('theme-dark');
+       }
+    }
+    // Immediately invoked function to set the theme on initial load
+    (function () {
+       if (localStorage.getItem('theme') === 'theme-light') {
+           setTheme('theme-light');
+       } else {
+           setTheme('theme-dark');
+       }
+    })();
+
+</script>
 
 
 <div class = article>
@@ -29,7 +57,7 @@
 
     <h2> List of Space Stations </h2>
     <img src = "../assets/list-of-space-stations.png" alt = "list of space stations">
-    
+
     <h2> The one and only functioning space station in 2020 </h2>
     <p> As of 2020, one fully operational and permanently inhabited space station is in low Earth orbit: the International Space Station (ISS), which is used to study the effects of spaceflight on the human body as well as to provide a location to conduct a greater number and longer length of scientific studies than is possible on other space vehicles. </p>
      <img src = "../assets/international-space-station.jpg" alt = "image of ISS">
@@ -48,7 +76,7 @@
 
 <div class = "article-list">
     <h2> More about <a href="../#space-technology">Space Technology</a> </h2>
-    
+
 <div class = "tiles">
      <div class = "tile">
         <a href="what-are-artificial-satellites.html">
@@ -68,14 +96,14 @@
     <!--    <h3> Space stations </h3>-->
     <!--    </a>-->
     <!--</div>-->
-    
+
     <div class = "tile">
         <a href="spacecrafts.html">
              <img src = "../assets/thumbnails/007.jpg" alt="image of take off">
         <h3> Spacecrafts </h3>
         </a>
     </div>
-    
+
 </div>
 </div>
 
@@ -83,9 +111,8 @@
 
 <div class = "footer">
     <a href="https://www.dsta.gov.sg/spacecube"><img src = "../assets/spacecube.png" alt="" style="float:left;width:auto;height:7.5vh; margin-top:0.25vh; margin-right: 10px"> SpaceCube Mission </a>
-    <div class = "footer-right"> 
+    <div class = "footer-right">
         <a href="#">Back to Top</a>
     </div>
-    
-</div>
 
+</div>

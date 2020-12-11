@@ -12,13 +12,41 @@
 </head>
 
 <div class = "navigation-bar">
-   <a href="../#" ><img src = "../assets/logow.png" alt=""> spacesheep </a>
-  <div class = "navigation-bar-right">
+   <a href="../#"  id = "logo-name"> <img src = "../assets/empty.png" id ="logo" alt="">  spacesheep </a>
+   <div class = "navigation-bar-right">
   <a href="../#cubesat">CubeSat</a>
   <a href="../#space-technology">Space Technology</a>
   <a href="../about.html">About</a>
+  <button id = "switch" onclick="toggleTheme()">  </button>
   </div>
 </div>
+
+<script>
+    // function to set a given theme/color-scheme
+    function setTheme(themeName) {
+        localStorage.setItem('theme', themeName);
+        document.documentElement.className = themeName;
+    }
+    // function to toggle between light and dark theme
+    function toggleTheme() {
+       if (localStorage.getItem('theme') === 'theme-dark'){
+           setTheme('theme-light');
+
+       } else {
+           setTheme('theme-dark');
+       }
+    }
+    // Immediately invoked function to set the theme on initial load
+    (function () {
+       if (localStorage.getItem('theme') === 'theme-light') {
+           setTheme('theme-light');
+       } else {
+           setTheme('theme-dark');
+       }
+    })();
+
+</script>
+
 
 
 <div class = article>
@@ -27,20 +55,20 @@
     <p> An artificial satellite is an object that people have made and launched into orbit using rockets. There are currently over a thousand active satellites orbiting the Earth. The size, altitude and design of a satellite depend on its purpose.</p>
 
     <p> Satellites vary in size. Some cube satellites are as small as 10 cm. Some communication satellites are about 7 m long and have solar panels that extend another 50 m. The largest artificial satellite is the International Space Station (ISS). The main part of this is as big as a large five-bedroom house, but including solar panels, it is as large as a rugby field. </p>
-    
+
     <p> Altitudes of satellites above the Earth’s surface also vary. These are three common orbits: </p>
         <ul>
         <li> <b> Low Earth orbit (LEO) </b> – from 200 to 2,000 km, for example, the ISS orbits at 400 km with a speed of 28,000 km/hour, and time for one orbit is about 90 minutes. </li>
         <li> <b> Medium Earth orbit (MEO) </b> – most MEO satellites are at an altitude of 20,000 km, and time for one orbit is 12 hours.</li>
         <li> <b> Geostationary orbit (GEO) </b> – 36,000 km above the Earth. Time for one orbit is 24 hours. This is to match the rotation of the Earth so that the satellite appears to stay above the same point above the Earth’s surface. This is used for many communications and weather satellites. </li>
         </ul>
-    
+
 </div>
 
 
 <div class = "article-list">
     <h2> More about <a href="../#space-technology">Space Technology</a> </h2>
-    
+
 <div class = "tiles">
     <!-- <div class = "tile">-->
     <!--    <a href="what-are-artificial-satellites.html">-->
@@ -60,14 +88,14 @@
         <h3> Space stations </h3>
         </a>
     </div>
-    
+
     <div class = "tile">
         <a href="spacecrafts.html">
              <img src = "../assets/thumbnails/007.jpg" alt="image of take off">
         <h3> Spacecrafts </h3>
         </a>
     </div>
-    
+
 </div>
 </div>
 
@@ -75,9 +103,8 @@
 
 <div class = "footer">
     <a href="https://www.dsta.gov.sg/spacecube"><img src = "../assets/spacecube.png" alt="" style="float:left;width:auto;height:7.5vh; margin-top:0.25vh; margin-right: 10px"> SpaceCube Mission </a>
-    <div class = "footer-right"> 
+    <div class = "footer-right">
         <a href="#">Back to Top</a>
     </div>
-    
-</div>
 
+</div>

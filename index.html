@@ -54,14 +54,41 @@
 
 
 <div class = "navigation-bar">
-   <a href="../#" ><img src = "../assets/logow.png" alt=""> spacesheep </a>
+   <a href="#"  id = "logo-name"> <img src = "assets/empty.png" id ="logo" alt="">  spacesheep </a>
    <div class = "navigation-bar-right">
-  <a href="../#cubesat">CubeSat</a>
-  <a href="../#space-technology">Space Technology</a>
+  <a href="#cubesat">CubeSat</a>
+  <a href="#space-technology">Space Technology</a>
   <a href="about.html">About</a>
-  
+  <button id = "switch" onclick="toggleTheme()">  </button>
   </div>
 </div>
+
+
+<script>
+    // function to set a given theme/color-scheme
+    function setTheme(themeName) {
+        localStorage.setItem('theme', themeName);
+        document.documentElement.className = themeName;
+    }
+    // function to toggle between light and dark theme
+    function toggleTheme() {
+       if (localStorage.getItem('theme') === 'theme-dark'){
+           setTheme('theme-light');
+
+       } else {
+           setTheme('theme-dark');
+       }
+    }
+    // Immediately invoked function to set the theme on initial load
+    (function () {
+       if (localStorage.getItem('theme') === 'theme-light') {
+           setTheme('theme-light');
+       } else {
+           setTheme('theme-dark');
+       }
+    })();
+
+</script>
 
 <div class="landing-image">
   <div class="landing-text">
@@ -88,14 +115,14 @@
         <h3> Applications of CubeSat </h3>
         </a>
     </div>
-    
+
     <div class = "tile">
         <a href="articles/future-of-cubesat.html">
              <img src = "assets/thumbnails/017.jpg" alt="coloured earth with satellite">
         <h3> Future of CubeSats </h3>
         </a>
     </div>
-    
+
     <div class = "tile">
         <a href="articles/notable-cubesats-in-history.html">
              <img src = "assets/thumbnails/039.png" alt="image of cubesat">
@@ -127,14 +154,14 @@
         <h3> Space Stations </h3>
         </a>
     </div>
-    
+
     <div class = "tile">
         <a href="articles/spacecrafts.html">
              <img src = "assets/thumbnails/007.jpg" alt="image of take off">
         <h3> Spacecrafts </h3>
         </a>
     </div>
-    
+
 </div>
 </div>
 
@@ -173,25 +200,25 @@
     </div>
 </div>
 
-<script> 
+<script>
     $('#pq-button').on('click', function() {
         $('#popup2').modal("show");
     });
-    
+
     $('#prequiz-button').on('click', function() {
         $('#myModal').modal("show");
     });
-    
+
 </script>
 
 
 
 <div class = "footer">
     <a href="https://www.dsta.gov.sg/spacecube" style = "padding: 0 20 0 5"><img src = "assets/spacecube.png" alt="" style="float:left;width:auto;height:7.5vh; margin-top:0.25vh; margin-right: 20px"> SpaceCube Mission </a>
-    <div class = "footer-right"> 
+    <div class = "footer-right">
         <a href="#">Back to Top</a>
     </div>
-    
+
 </div>
 
 

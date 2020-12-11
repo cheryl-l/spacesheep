@@ -12,13 +12,42 @@
 </head>
 
 <div class = "navigation-bar">
-   <a href="../#" ><img src = "../assets/logow.png" alt=""> spacesheep </a>
-  <div class = "navigation-bar-right">
+   <a href="../#"  id = "logo-name"> <img src = "../assets/empty.png" id ="logo" alt="">  spacesheep </a>
+   <div class = "navigation-bar-right">
   <a href="../#cubesat">CubeSat</a>
   <a href="../#space-technology">Space Technology</a>
   <a href="../about.html">About</a>
+  <button id = "switch" onclick="toggleTheme()">  </button>
   </div>
 </div>
+
+
+<script>
+    // function to set a given theme/color-scheme
+    function setTheme(themeName) {
+        localStorage.setItem('theme', themeName);
+        document.documentElement.className = themeName;
+    }
+    // function to toggle between light and dark theme
+    function toggleTheme() {
+       if (localStorage.getItem('theme') === 'theme-dark'){
+           setTheme('theme-light');
+
+       } else {
+           setTheme('theme-dark');
+       }
+    }
+    // Immediately invoked function to set the theme on initial load
+    (function () {
+       if (localStorage.getItem('theme') === 'theme-light') {
+           setTheme('theme-light');
+       } else {
+           setTheme('theme-dark');
+       }
+    })();
+
+</script>
+
 
 
 <div class = article>
@@ -27,13 +56,13 @@
 
     <p> The first CubeSat was launched in 2003, and the first NASA CubeSat was GeneSat-1 – launched in 2006. GeneSat-1’s success was an important factor in the increase of CubeSat popularity. </p>
     <p> Some Notable Missions: </p>
-    <ul> 
+    <ul>
 <li> <b> Doves (Planet):</b> Planet has a constellation of hundreds of 3U imaging satellites. They are able to take images with resolutions of about 72 cm spatial resolution – that’s less than 1m per pixel! Planet has shown the commercial viability of this class of satellite, even when the quantity of satellites in orbit vastly out numbers the amount of employees that operate them.</li>
 <li> <b> GeneSat-1 (NASA):</b> Launched in 2006, this self-contained space biology mission studied how the space environment impacted common proteins. This mission also showed the potential for CubeSats!</li>
 <li> <b> MARCO (NASA):</b> Mars Cube One (MARCO) was actually a mission with two CubeSats, MARCO-A and MARCO-B. These two 6U’s served as companions for the Mars Insight lander which launched in Spring 2018 and landed on Mars in late November that same year. The MARCO mission was to test the feasibility of deep-space CubeSats, and to act as a communication relay between the Deep Space Network and the Insight lander. These two CubeSats successfully performed their mission and have now opened up a new realm of opportunities for deep-space missions in the future!</li>
 </ul>
 
-<div class = "tiles"> 
+<div class = "tiles">
     <div class = "tile" > <img src = "../assets/dove.jpg" alt = "image of dove"><h3> Doves(Planet) </h3></div>
     <div class = "tile" ><img src = "../assets/genesat.jpg" alt = "image of GeneSat-1"><h3>GeneSat-1 (NASA)</h3></div>
     <div class = "tile" > <img src = "../assets/marco.jpg" alt = "image of MARCO"> <h3> MACRO (NASA) </h3> </div>
@@ -57,14 +86,14 @@
         <h3> Applications of CubeSat </h3>
         </a>
     </div>
-    
+
     <div class = "tile">
         <a href="future-of-cubesat.html">
              <img src = "../assets/thumbnails/017.jpg" alt="coloured earth with satellite">
         <h3> Future of CubeSats </h3>
         </a>
     </div>
-    
+
     <!--<div class = "tile">-->
     <!--    <a href="notable-cubesats-in-history.html">-->
     <!--         <img src = "../assets/thumbnails/039.png" alt="image of cubesat">-->
@@ -76,10 +105,8 @@
 
 <div class = "footer">
     <a href="https://www.dsta.gov.sg/spacecube"><img src = "../assets/spacecube.png" alt="" style="float:left;width:auto;height:7.5vh; margin-top:0.25vh; margin-right: 10px"> SpaceCube Mission </a>
-    <div class = "footer-right"> 
+    <div class = "footer-right">
         <a href="#">Back to Top</a>
     </div>
-    
+
 </div>
-
-

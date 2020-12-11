@@ -12,13 +12,43 @@
 </head>
 
 <div class = "navigation-bar">
-   <a href="../#" ><img src = "../assets/logow.png" alt=""> spacesheep </a>
-  <div class = "navigation-bar-right">
+   <a href="../#"  id = "logo-name"> <img src = "../assets/empty.png" id ="logo" alt="">  spacesheep </a>
+   <div class = "navigation-bar-right">
   <a href="../#cubesat">CubeSat</a>
   <a href="../#space-technology">Space Technology</a>
   <a href="../about.html">About</a>
+  <button id = "switch" onclick="toggleTheme()">  </button>
   </div>
 </div>
+
+
+<script>
+    // function to set a given theme/color-scheme
+    function setTheme(themeName) {
+        localStorage.setItem('theme', themeName);
+        document.documentElement.className = themeName;
+    }
+    // function to toggle between light and dark theme
+    function toggleTheme() {
+       if (localStorage.getItem('theme') === 'theme-dark'){
+           setTheme('theme-light');
+
+       } else {
+           setTheme('theme-dark');
+       }
+    }
+    // Immediately invoked function to set the theme on initial load
+    (function () {
+       if (localStorage.getItem('theme') === 'theme-light') {
+           setTheme('theme-light');
+       } else {
+           setTheme('theme-dark');
+       }
+    })();
+
+</script>
+
+
 
 
 <div class = article>
@@ -26,10 +56,10 @@
     <img src = "../assets/thumbnails/038.png" alt="image of cubesat">
     <h2> What is a CubeSat </h2>
     <p> CubeSat is short for ‘Cube Satellite’. The formal definition of a CubeSat is a spacecraft that adheres to the CubeSat Design Specification developed by Cal Poly and Stanford (i.e., it fits inside the P-POD and follows the flight safety guidelines).</p>
-    
+
     <h2> Specifications of a CubeSat </h2>
     <p> CubeSats are a class of nanosatellites (satellites weighing between 1-10 kg) that are built using cube shaped units or U’s. Each unit is 10 cm x 10 cm x 10.33 cm, which makes a 3U CubeSat about as big as a loaf of bread! Currently, the most common CubeSat form factors are 1U, 3U, and 6U. These satellites are used for technology demonstrations, higher risk proof of concept missions, amateur radio, and science. There are a large number of CubeSat companies now too! Some of the more notable ones are the Earth imaging companies such as Planet or Spire. Many other companies exist that work on CubeSat deployers, components, launch vehicles, and even operating satellites. </p>
-    
+
     <h2> History of the CubeSat </h2>
     <p>The CubeSat standard was formed when two professors, Jordi Puig-Suari of California Polytechnic State University and Bob Twiggs of Stanford University, proposed it in 1999 with the goal of allowing university students to design, build, test, and operate simple spacecraft. The first CubeSat was launched in 2003, and the first NASA CubeSat was GeneSat-1 – launched in 2006. GeneSat-1’s success was an important factor in the increase of CubeSat popularity. Up until 2013, CubeSats were a small field dominated by academia and university projects. After 2013, most of the CubeSats launched were for amateur or commercial purposes. As of 2012 only 72 of CubeSats were on orbit, but as of January 2019 over 900 have been successfully deployed on orbit! The applicability of these satellites are being used more and more every year.</p>
 
@@ -54,14 +84,14 @@
         <h3> Applications of CubeSat </h3>
         </a>
     </div>
-    
+
    <div class = "tile">
         <a href="future-of-cubesat.html">
              <img src = "../assets/thumbnails/017.jpg" alt="coloured earth with satellite">
         <h3> Future of CubeSats </h3>
         </a>
     </div>
-    
+
     <div class = "tile">
         <a href="notable-cubesats-in-history.html">
              <img src = "../assets/thumbnails/039.png" alt="image of cubesat">
@@ -73,8 +103,8 @@
 
 <div class = "footer">
     <a href="https://www.dsta.gov.sg/spacecube"><img src = "../assets/spacecube.png" alt="" style="float:left;width:auto;height:7.5vh; margin-top:0.25vh; margin-right: 10px"> SpaceCube Mission </a>
-    <div class = "footer-right"> 
+    <div class = "footer-right">
         <a href="#">Back to Top</a>
     </div>
-    
+
 </div>
