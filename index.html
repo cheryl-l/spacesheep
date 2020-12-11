@@ -1,0 +1,201 @@
+<html>
+<head>
+
+<title>
+    spacesheep
+</title>
+<!--webpage name-->
+<link rel = "icon" href = "assets/logob.png">
+<!--webpage icon-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script>
+	$(document).ready(function() {
+    var isshow = localStorage.getItem('isshow');
+    if (isshow== null) {
+        localStorage.setItem('isshow', 1);
+
+        // Show popup here
+		$("#myModal").modal('show');
+    }
+});
+</script>
+<script src="/quizz.js" defer></script>
+<!--modal stuff-->
+<link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'>
+<link rel = "stylesheet" type = "text/css" href = "style.css">
+<!--link CSS to html-->
+</head>
+
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Pre-Quiz: <br> How much do you know about space technology?</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="quiz">
+                	<h3 id="question"></h3>
+                	<button class="optionButton" type="button" id="choice0"></button>
+                	<button class="optionButton" type="button" id="choice1"></button>
+                	<button class="optionButton" type="button" id="choice2"></button>
+                	<button class="optionButton" type="button" id="choice3"></button>
+                	<footer>
+                		<p><span id="progress"></span></p>
+                		<p><span id="score"></span></p>
+                	</footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class = "navigation-bar">
+   <a href="../#" ><img src = "../assets/logow.png" alt=""> spacesheep </a>
+   <div class = "navigation-bar-right">
+  <a href="../#cubesat">CubeSat</a>
+  <a href="../#space-technology">Space Technology</a>
+  <a href="about.html">About</a>
+  
+  </div>
+</div>
+
+<div class="landing-image">
+  <div class="landing-text">
+    <h1>Welcome to spacesheep's</h1>
+    <p>Want to learn more about space? Look no further! Click below to find out what spacesheep is all about. </p>
+    <a href="https://youtu.be/7nAuZCyqeXs"><button>Watch the Video</button></a>
+  </div>
+</div>
+
+
+<div class = "article-list" id = "cubesat" >
+    <h2> CubeSat </h2>
+
+<div class = "tiles">
+     <div class = "tile">
+        <a href="articles/introduction-to-cubesat.html">
+             <img src = "assets/thumbnails/038.png" alt="image of cubesat">
+        <h3> Introduction to CubeSat </h3>
+        </a>
+    </div>
+     <div class = "tile">
+        <a href="articles/applications-of-cubesat.html">
+             <img src = "assets/thumbnails/009.jpg" alt="earth from space">
+        <h3> Applications of CubeSat </h3>
+        </a>
+    </div>
+    
+    <div class = "tile">
+        <a href="articles/future-of-cubesat.html">
+             <img src = "assets/thumbnails/017.jpg" alt="coloured earth with satellite">
+        <h3> Future of CubeSats </h3>
+        </a>
+    </div>
+    
+    <div class = "tile">
+        <a href="articles/notable-cubesats-in-history.html">
+             <img src = "assets/thumbnails/039.png" alt="image of cubesat">
+        <h3> Notable CubeSats in history </h3>
+        </a>
+    </div>
+</div>
+</div> <!--end of cubesat-->
+
+<div class = "article-list" id = "space-technology" >
+    <h2> Space Technology </h2>
+
+<div class = "tiles">
+     <div class = "tile">
+        <a href="articles/what-are-artificial-satellites.html">
+             <img src = "assets/thumbnails/001.jpg" alt="image of satellite with earth">
+        <h3> What are Artificial Satellites? </h3>
+        </a>
+    </div>
+     <div class = "tile">
+        <a href="articles/types-of-satellites.html">
+             <img src = "assets/thumbnails/011.jpg" alt="image of satellite">
+        <h3> Types of Satellites </h3>
+        </a>
+    </div>
+    <div class = "tile">
+        <a href="articles/space-stations.html">
+             <img src = "assets/thumbnails/040.jpg" alt="image of international space station">
+        <h3> Space Stations </h3>
+        </a>
+    </div>
+    
+    <div class = "tile">
+        <a href="articles/spacecrafts.html">
+             <img src = "assets/thumbnails/007.jpg" alt="image of take off">
+        <h3> Spacecrafts </h3>
+        </a>
+    </div>
+    
+</div>
+</div>
+
+<div class="pq-image">
+  <div class="pq-text">
+    <h1>Have you read our articles?</h1>
+    <p>Want to test your knowledge? </p>
+    <button id = "pq-button">Take the Post-Quiz</button>
+    <p> <button id = "prequiz-button"> Or Take the Pre-Quiz Again </button> </p>
+  </div>
+</div>
+
+<script src="/quiz2.js" defer></script>
+
+<div id="popup2" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Post-Quiz: <br> What have you learnt about space technology?</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="quiz2">
+                	<h3 id="question2"></h3>
+                	<button class="optionButton" type="button" id="2choice0"></button>
+                	<button class="optionButton" type="button" id="2choice1"></button>
+                	<button class="optionButton" type="button" id="2choice2"></button>
+                	<button class="optionButton" type="button" id="2choice3"></button>
+                	<footer>
+                		<p><span id="progress2"></span></p>
+                		<p><span id="score2"></span></p>
+                	</footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script> 
+    $('#pq-button').on('click', function() {
+        $('#popup2').modal("show");
+    });
+    
+    $('#prequiz-button').on('click', function() {
+        $('#myModal').modal("show");
+    });
+    
+</script>
+
+
+
+<div class = "footer">
+    <a href="https://www.dsta.gov.sg/spacecube" style = "padding: 0 20 0 5"><img src = "assets/spacecube.png" alt="" style="float:left;width:auto;height:7.5vh; margin-top:0.25vh; margin-right: 20px"> SpaceCube Mission </a>
+    <div class = "footer-right"> 
+        <a href="#">Back to Top</a>
+    </div>
+    
+</div>
+
+
+
+
+
+</html>
